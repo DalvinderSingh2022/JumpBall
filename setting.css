@@ -1,0 +1,88 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1em;
+    margin: 1em;
+    height: calc(100vh - 2em);
+    width: 100vw;
+}
+
+a.btn.flex {
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+}
+
+a.btn.flex.pri{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.themes {
+    width: 100%;
+    height: 100%;
+    column-gap: 16px;
+    grid-area: 2 / 1 / 7 / 7;
+}
+
+.balls {
+    width: 100%;
+    height: 100%;
+    overflow: auto hidden;
+    grid-area: 1 / 2 / 2 / 6;
+    justify-content: space-evenly;
+    padding: 8px 0;
+    align-self: center;
+}
+
+.theme {
+    width: calc(25% - 16px);
+    height: calc(50% - 16px);
+}
+
+.img-area {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 5px solid transparent;
+}
+
+.theme.selected .img-area::before {
+    position: absolute;
+    content: "";
+    background-color: var(--yellow-dark);
+    width: calc(100% - 1em);
+    height: 20px;
+    bottom: -10px;
+    border-radius: 20px;
+}
+
+.theme.theme.selected .img-area {
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+}
+
+.balls .ball {
+    width: calc(100% / 6 - 24px);
+    max-width: 75px;
+    min-width: 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ball.selected::before {
+    position: absolute;
+    content: "";
+    width: calc(100% - 1em);
+    height: 10px;
+    bottom: 0;
+    border-radius: 20px;
+    background: var(--yellow-dark);
+}
+
+.ball.selected img {
+    border-radius: 50%;
+    border:2px solid var(--yellow);
+    background-color: var(--yellow);
+}

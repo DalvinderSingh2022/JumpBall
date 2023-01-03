@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --yellow: #FFD814;
+    --yellow-dark: #FCD200;
+    --orange: #FFA41C;
+    --orange-dark: #FF8F00;
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-size: 2rem;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(0deg, hsla(211, 72%, 98%, 0.12) 0px, hsla(211, 72%, 98%, 0.12) 55px, transparent 55px, transparent 110px), repeating-linear-gradient(90deg, hsla(211, 72%, 98%, 0.12) 0px, hsla(211, 72%, 98%, 0.12) 55px, transparent 55px, transparent 110px), linear-gradient(90deg, hsl(199, 94%, 71%), hsl(199, 94%, 71%))
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.5);
+    width: 600px;
+    height: 75vh;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.wrap{
+    flex-wrap: wrap;
+}
+
+.hide{
+    display: none;
+}
+
+.heading {
+    font-size: 2.4em;
+    color: var(--orange-dark);
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.btn {
+    border: 1px solid;
+    font-size: .6em;
+    width: 180px;
+    max-width: 100%;
+    height: 45px;
+    border-radius: 24px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1.2em;
+    cursor: pointer;
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 10px;
+    top: calc(100% - 5px);
+    border-radius: 20px;
+    left: calc(50% - 20px);
+    transition: .2s ease;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn.pri::before {
+    background: var(--orange-dark);
+}
+
+.btn.sec::before {
+    background: var(--yellow-dark);
+}
+
+.btn:hover::before {
+    width: calc(100% - 40px);
+    left: 20px;
+}
+
+.pri.btn {
+    border-color: var(--orange);
+    background-color: var(--orange);
+}
+
+.sec.btn {
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+}
+
+.ball.move {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -9;
+    width: 250px;
+    height: 250px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.score-area {
+    margin: -1.5em 0 1em 0;
+}

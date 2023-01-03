@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Ball | Home</title>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="wrap">
+    <div class="container flex column">
+        <span class="heading">Ball <u>Jump</u></span>
+        <a class="pri btn flex" href="game.html">START</a>
+        <a class="sec btn flex" href="setting.html">SETTING</a>
+    </div>
+    <img src="Images/ball1.png" alt="ball" class="ball move">
+</body>
+<script>
+    const ballEle = document.querySelector(".ball");
+    var currentBall = 0;
+    setInterval(() => {
+        currentBall++;
+        if (currentBall >= ballData.length) currentBall = 0;
+        ballEle.setAttribute("src", ballData[currentBall]);
+    }, 10000);
+</script>
+
+</html>
